@@ -11,6 +11,15 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
+# Service account and credential files
+*.json
+!package*.json
+!tsconfig.json
+serviceAccountKey.json
+*.pem
+*.key
+*.p12
+
 # Build outputs
 dist/
 build/
