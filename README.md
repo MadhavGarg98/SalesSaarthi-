@@ -1,46 +1,224 @@
-# Getting Started with Create React App
+# 🚀 SalesSaarthi – AI WhatsApp Sales Assistant
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+SalesSaarthi is an AI-powered WhatsApp bot designed to help small businesses automate customer interactions, manage product queries, and take orders directly through WhatsApp.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📌 Problem Statement
 
-### `npm start`
+Small businesses often face challenges like:
+- Managing multiple customer queries manually
+- Delayed responses leading to lost sales
+- No proper system to track orders from WhatsApp
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 💡 Solution
 
-### `npm test`
+SalesSaarthi solves this by providing:
+- 🤖 AI-based automated replies
+- 📦 Product recommendation system
+- 🧾 Order collection via chat
+- 📊 Dashboard for managing data
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🧠 Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- AI-powered WhatsApp chatbot  
+- Real-time customer interaction  
+- Order placement via WhatsApp  
+- Firebase database integration  
+- Admin dashboard (React-based)  
+- Fast and scalable backend  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🛠 Tech Stack
 
-### `npm run eject`
+- **Frontend:** React.js (Vercel)
+- **Backend:** Node.js + Express (Render / Railway)
+- **Database:** Firebase Firestore
+- **AI:** OpenAI API
+- **WhatsApp Integration:** Twilio WhatsApp API
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+---
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🔗 Project Links
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- 🌐 **Frontend:** [SalesSaarthi Web App](https://sales-saarthi.vercel.app/)
+- ⚙️ **Backend:** [SalesSaarthi API](https://salessaarthi-ai-production.up.railway.app)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+---
 
-## Learn More
+## 📂 Folder Structure
+SalesSaarthi/
+│── frontend/ # React dashboard
+│── backend/ # Node.js API & bot logic
+│── README.md
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
+
+##  Setup Instructions
+
+### 1 Clone Repository
+
+```bash
+git clone https://github.com/your-username/salessaarthi.git
+cd salessaarthi
+```
+
+### 2 Backend Setup
+
+```bash
+cd backend
+npm install
+```
+
+Create a `.env` file inside the backend folder:
+
+```env
+PORT=5000
+OPENAI_API_KEY=your_openai_api_key
+TWILIO_ACCOUNT_SID=your_twilio_sid
+TWILIO_AUTH_TOKEN=your_twilio_token
+TWILIO_WHATSAPP_NUMBER=whatsapp:+14155238886
+FIREBASE_CONFIG=your_firebase_config
+```
+
+Run the backend:
+
+```bash
+npm start
+```
+
+### 3 Frontend Setup
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+---
+
+##  WhatsApp Integration  
+
+###  Step 1: Open Twilio Sandbox
+
+Go to: https://console.twilio.com/
+
+Navigate to:
+Messaging  Try it out  WhatsApp Sandbox
+
+###  Step 2: Join Sandbox
+
+Send this message from your WhatsApp:
+
+```
+join <your-sandbox-code>
+```
+
+Example:
+
+```
+join silver-bird
+```
+
+Send it to:
+
+```
++1 415 523 8886
+```
+
+###  Step 3: Configure Webhook
+
+In Twilio Sandbox settings:
+
+Set **WHEN A MESSAGE COMES IN** to:
+
+```
+https://your-backend-link.onrender.com/webhook
+```
+
+###  Step 4: Backend Webhook Example
+
+```javascript
+app.post('/webhook', async (req, res) => {
+  const message = req.body.Body;
+  const sender = req.body.From;
+
+  // Process with AI
+  // Send response using Twilio
+});
+```
+
+---
+
+##  How It Works
+
+1. User sends a message on WhatsApp
+2. Twilio forwards the message to the backend webhook
+3. Backend processes the message using AI
+4. Response is sent back via Twilio
+5. Data is stored in Firebase
+
+---
+
+##  Example Flow
+
+```
+User: Show me phones under 20000
+Bot: Here are some options...
+User: I want to order this
+Bot: Please share your name, address, and phone number
+```
+
+---
+
+##  Deployment
+
+### Backend
+- Render
+- Railway
+- AWS
+
+### Frontend
+- Vercel
+
+---
+
+##  Environment Variables
+
+- OpenAI API Key
+- Twilio Account SID & Auth Token
+- Firebase Configuration
+
+---
+
+##  Testing
+
+1. Join Twilio sandbox
+2. Send a message on WhatsApp
+3. Check backend logs
+
+---
+
+##  Team Dhara
+- Madhav
+- Shivang
+- Moksh
+- Nishant
+
+---
+
+##  Future Scope
+
+- Payment integration
+- Multi-language support
+- CRM integration
+- Voice-based AI assistant
+
+
+
